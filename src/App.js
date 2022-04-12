@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import List from './components/list/List'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* шапка */}
+      <header className="header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          My Trello
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        </header>
+      {/* меню */}
+      <nav className="nav">
+        <button className="btn">Меню</button>
+
+      </nav>
+      {/* тело */}
+      <List />
+
+
+      
+
+
     </div>
   );
 }

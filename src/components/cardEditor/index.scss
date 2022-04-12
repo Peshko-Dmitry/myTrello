@@ -1,0 +1,143 @@
+$color: rgb(84, 82, 94, .8);
+$colorWhite: #ffffff;
+$colorBlue: #0079bf;
+$colorText: #172b4d;
+$colorBlueHover:rgb(0, 121, 191, 0.8);
+$colorBlueActiv:rgb(0, 121, 191, 0.7);
+$colorGrayLight: rgb(235, 236, 240);
+$colorGrayHover: rgba(84, 82, 94, 0.15);
+$colorGrayActive: rgba(84, 82, 94, 0.25);
+$colorBtn: rgba(255, 255, 255, 0.2);
+$colorBtnHover:rgba(255, 255, 255, 0.25); 
+$colorBtnActive:rgba(255, 255, 255, 0.35); 
+
+.card{
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+        height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    .closed{
+        position: absolute;
+        top: 15px;
+        // left: 96%;
+        right: 15px;
+        background: none;
+        height: 30px;
+        fill: $colorGrayLight;
+        cursor: pointer;
+        transition:  all .2s ease;
+    }
+    .closed:hover{
+        transform: scale(1.2) rotate(90deg);
+
+    }
+    .closed:active{
+        transform: scale(1) rotate(90deg);
+
+    }
+
+
+}
+.card-editor{
+    padding: 0;
+    margin-left: -4px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    display: block;
+    z-index: 2;
+    border-radius: 3px;
+    background: none;
+    &-details{
+        margin: 0;
+        border-radius: 3px;
+        background: white;
+        
+
+        &-labels{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            left: 10px;
+            top: 5px;
+            width: 220px;
+            min-height: 5px;
+            background: white;
+            &-label{
+                box-sizing: border-box;
+                height: 8px;
+                width: 40px;
+                background: red;
+                border-radius: 3px;
+                margin-right: 4px;
+                margin-bottom: 4px;
+            }
+
+        }
+        &-title{
+            width: 244px;
+            height: 66px;
+            margin-top: 0px;
+            padding: 7px 10px;
+            background: white;
+            resize: none;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+            z-index: -8;
+
+        }
+        &-title:focus{
+            outline: none;  
+        }
+        &-save{
+            color: #ffffff;
+            background: #0079bf;
+            font-size: 14px;
+            padding: 4px 12px;
+            border: none;
+            border-radius: 3px;
+            margin: 5px 0 3px -1px;
+            min-height: 32px;
+            cursor: pointer;
+            // margin: 5px;
+        }
+        &-save:hover{
+            background: rgb(9, 137, 211);
+        }
+        &-save:active{
+            background: rgb(19, 157, 236);
+        }
+        
+    }
+    &-buttons{
+        position: absolute;
+        top: 0px;
+        left: 280px;
+        background: none;
+        button{
+            color: #ffffff;
+            background: #00000099;
+            font-size: 14px;
+            padding: 4px 12px;
+            border: none;
+            border-radius: 3px;
+            margin: 0 0 4px 0;
+            min-height: 32px;
+            cursor: pointer;
+            min-width: 150px;
+            transition: all 0.2s ease;
+        }
+        button:hover{
+            margin-left: 5px;
+        }
+    }
+    
+
+    
+}

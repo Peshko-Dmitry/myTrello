@@ -1,0 +1,252 @@
+$color: rgb(84, 82, 94, .8);
+$colorWhite: #ffffff;
+$colorBlue: #0079bf;
+$colorText: #172b4d;
+$colorBlueHover:rgb(0, 121, 191, 0.8);
+$colorBlueActiv:rgb(0, 121, 191, 0.7);
+$colorGrayLight: rgb(235, 236, 240);
+$colorGrayHover: rgba(84, 82, 94, 0.15);
+$colorGrayActive: rgba(84, 82, 94, 0.25);
+$colorBtn: rgba(255, 255, 255, 0.2);
+$colorBtnHover:rgba(255, 255, 255, 0.25); 
+$colorBtnActive:rgba(255, 255, 255, 0.35); 
+
+.open-card-background{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    // background: lightcoral;
+    z-index: 3;
+}
+.open-card{
+    position: fixed;
+    display: none;
+    top: 30px;
+    left: calc(50% - 285px);
+    min-height: 780px;
+    width: 570px;
+    background: $colorGrayLight;
+    z-index: 4;
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+    &-title{
+        position: relative;
+        top: 0;
+        // left: 20px;
+        background: none;
+        height: 50px;
+        width: 100%;
+        svg{
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            height: 25px;
+            fill:$color;
+            background: none;
+            // z-index: 4;
+        }
+
+        input{
+            position: absolute;
+            top: 18px;
+            left: 70px;
+            width: 400px;
+            height: 25px;
+            background: none;
+            border: 2px solid transparent;
+            padding: 8px 10px;
+            font-size: 24px;
+            border-radius: 3px;
+        }
+        input:focus{
+            outline: none;
+            border: 2px solid $colorBlue;
+            background: $colorWhite;
+      
+        }
+        
+
+    }
+    &-label{
+        position: relative;
+        top: 15px;
+        left: 70px;
+        display: block;
+        min-height: 30px;
+        width: 430px;
+        background: none;
+        span{
+            position: relative;
+            display: inline-block;
+            height: 10px;
+            width: 50px;
+            margin: 3px;
+            padding: 2px;
+            border-radius: 3px;
+            background: red;
+        }
+    }
+    .closed{
+        position: absolute;
+        top: 18px;
+        left: 502px;
+        height: 25px;
+        width: 25px;
+        padding: 10px;
+        border-radius: 50%;
+        background: none;
+        fill:$color;
+
+
+    }
+    .closed:hover{
+        background: $colorGrayHover;
+
+    }
+    .closed:active{
+        background: $colorGrayActive;
+
+    }
+    &-labels{
+        position: relative;
+        top: 20px;
+        background: none;
+        min-height: 150px;
+        width: 100%;
+        svg{
+            position: absolute;
+            top: 32px;
+            left: 25px;
+            height: 25px;
+            fill:$color;
+            background: none;
+        }
+        p{
+            position: absolute;
+            top: 20px;
+            left: 70px;
+            height: 25px;
+            fill:$color;
+            background: none;
+            padding: 8px 10px;
+            font-size: 20px;
+        }
+        .colors{
+            position: absolute;
+            top: 70px;
+            left: 60px;
+            padding: 8px 10px;
+            width: 450px;
+            min-height: 50px;
+            margin: 0;
+            background: none;
+            span{
+                position: relative;
+                display: inline-block;
+                box-shadow: 0 1px 0px #091e4240;
+                margin: 3px;
+                height: 35px;
+                width: 70px;
+                border-radius: 3px;
+            }   
+            svg{
+                position: absolute;
+                display: block;
+                top: 0px;
+                left: 20px;
+                fill: $colorWhite;
+                transition: all .15s ease;
+                transform: scale(0);
+                
+                border-radius: 3px;
+            }
+            .active{
+                top: 0px;
+                left: 0px;
+                padding: 5px 24px;
+                display:block;
+                transform: scale(1);
+                background: $colorGrayActive;
+
+            }
+
+
+        }
+
+    }
+    &-description{
+        position: relative;
+        top: 70px;
+        background: none;
+        min-height: 200px;
+        width: 100%;
+        svg{
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            height: 25px;
+            fill:$color;
+            background: none;
+        }
+        p{
+            position: absolute;
+            top: 20px;
+            left: 70px;
+            height: 25px;
+            fill:$color;
+            background: none;
+            padding: 8px 10px;
+            font-size: 20px;
+        }
+        textarea{
+            position: absolute;
+            top: 90px;
+            left: 70px;
+            padding: 8px 10px;
+            width: 440px;
+            height: 50px;
+            margin: 0;
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            outline: none;
+            resize: none;
+            height: 100px;
+            box-shadow: 0 1px 0 #091e4240;
+        }
+        textarea:focus{
+            outline: none;  
+            height: 100px;
+            border: 2px solid $colorBlue;
+        }
+        button{
+            position: absolute;
+            top: 250px;
+            left: 65px;
+            color: $colorWhite;
+            background: $colorBlue;
+            font-size: 14px;
+            padding: 4px 12px;
+            border: none;
+            border-radius: 3px;
+            margin: 0 4px;
+            min-height: 32px;
+            cursor: pointer;
+        }
+        button:hover{
+            background: $colorBlueHover;
+          }
+          button:active{
+            background: $colorBlueActiv;
+          }
+  
+    }
+    
+   
+
+}
