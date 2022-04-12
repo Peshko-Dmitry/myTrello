@@ -12,9 +12,6 @@ const CardEditor = ({element, editActive, setList, list, item}) => {
     const newTitleCard = (event) => {
             // setText(element.task)
             setText(event.target.value)
-        
-        
-        
     }
     const editCard = () => {
         let newArr = item.tasks
@@ -77,7 +74,9 @@ const CardEditor = ({element, editActive, setList, list, item}) => {
                 className="card-editor-buttons-open">Открыть карточку</button>
                 
                 {/* <button className="card-editor-buttons-edit">Изменить метки</button> */}
-                <button className="card-editor-buttons-delete">Удалить карточку</button>
+                <button 
+                    onClick={()=>setDeleteCard(true)}
+                className="card-editor-buttons-delete">Удалить карточку</button>
             </div>
             
         </div>

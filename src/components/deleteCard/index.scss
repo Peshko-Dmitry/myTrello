@@ -1,0 +1,70 @@
+$color: rgb(84, 82, 94, .8);
+$colorWhite: #ffffff;
+$colorBlue: #0079bf;
+$colorText: #172b4d;
+$colorBlueHover:rgb(0, 121, 191, 0.8);
+$colorBlueActiv:rgb(0, 121, 191, 0.7);
+$colorGrayLight: rgb(235, 236, 240);
+$colorGrayHover: rgba(84, 82, 94, 0.15);
+$colorGrayActive: rgba(84, 82, 94, 0.25);
+$colorBtn: rgba(255, 255, 255, 0.2);
+$colorBtnHover:rgba(255, 255, 255, 0.25); 
+$colorBtnActive:rgba(255, 255, 255, 0.35); 
+
+.delete-card-background{
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    // background:$colorBlue;
+    z-index: 3;
+}
+.delete-card-window{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 100px;
+    min-width: 260px;
+    z-index: 3;
+    background: $colorWhite;
+    border-radius: 3px;
+    p{
+        position: relative;
+        top: 5px;
+        left: 5px;
+        width: 250px;
+        min-height: auto;
+        text-align: center;
+        background: none;
+        strong{
+            color: $colorText;
+            background: none;
+        }
+    }
+    button{
+        position: relative;
+
+        left: 50px;
+        bottom: -25px;
+        margin: 0 5px;
+
+        height: 30px;
+        width: 70px;
+        background: $colorGrayLight;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover{
+        background: $colorGrayHover;
+    }
+    button:active{
+        background: $colorGrayActive;
+    }
+
+
+
+}
