@@ -32,24 +32,36 @@ const AddList = ()=> {
     const addListLocal =(event) =>{
 
         if(tasksList.trim() !== '' ){
-            list.map(i => {
-                    if(i.title === tasksList.trim()){
-                        alert('Такое название списка уже существует! пожалуйста введите другое название.')
-                        setTasksList('')
-                        setList([...list])
-                    } else {
-                        const newTaskList = {
-                            id: tasksList,
-                            title: tasksList,
-                            tasks: [],            
-                            active: false,
-                            menu: false,
-                            color: null, 
-                        }
-                        setList([...list, newTaskList])
-                        setTasksList('')
-                    }
-                })
+            const newTaskList = {
+                id: tasksList,
+                title: tasksList,
+                tasks: [],            
+                active: false,
+                menu: false,
+                color: null, 
+            }
+            setList([...list, newTaskList])
+            setTasksList('')
+            console.log('ok')
+           
+            // list.map(i => {
+            //         if(i.title === tasksList.trim()){
+            //             alert('Такое название списка уже существует! пожалуйста введите другое название.')
+            //             setTasksList('')
+            //             setList([...list])
+            //         } else {
+            //             const newTaskList = {
+            //                 id: tasksList,
+            //                 title: tasksList,
+            //                 tasks: [],            
+            //                 active: false,
+            //                 menu: false,
+            //                 color: null, 
+            //             }
+            //             setList([...list, newTaskList])
+            //             setTasksList('')
+            //         }
+            //     })
 
         } else {
             alert('Please enter the name of the task list')
@@ -92,9 +104,11 @@ const AddList = ()=> {
         })
         setList(newArr)
     }
+    //*сделать проверку доп на одинаковые тайтлы в других списках
     const editListName = (event, item) => {
         let inputValue = event.target.value
         let newArr = list.map(i => {
+            // if (i.title === inputValue) return
             if(i.id === item.id){
                 i.title = inputValue
                 i.id = inputValue
