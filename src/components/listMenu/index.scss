@@ -1,0 +1,84 @@
+$color: rgb(84, 82, 94, .8);
+$colorWhite: #ffffff;
+$colorBlue: #0079bf;
+$colorText: #172b4d;
+$colorBlueHover:rgb(0, 121, 191, 0.8);
+$colorBlueActiv:rgb(0, 121, 191, 0.7);
+$colorGrayLight: rgb(235, 236, 240);
+$colorGrayHover: rgba(84, 82, 94, 0.15);
+$colorGrayActive: rgba(84, 82, 94, 0.25);
+$colorBtn: rgba(255, 255, 255, 0.2);
+$colorBtnHover:rgba(255, 255, 255, 0.25); 
+$colorBtnActive:rgba(255, 255, 255, 0.35); 
+
+.list-menu{
+    position: relative;
+    top: 0;
+    left: 260px;
+    background: $colorWhite;
+    min-height: 100px;
+    width: 310px;
+    z-index: 7;
+    border: solid 1px $colorGrayLight;
+    border-radius: 3px;
+    span{
+        background: none;
+        display: block;
+        top: 0;
+        width: 290px;
+        height: 30px;
+        margin: 5px;
+        cursor: pointer;
+        padding: 5px;
+
+
+
+        svg{
+            position: absolute;
+            right: 5px;
+            top: 10px;
+            background: none;
+            height: 30px;
+            width: 30px;
+            padding: 3px;
+            border-radius: 3px;
+            fill: $color;
+            
+
+        }
+        svg:hover{
+            background: $colorGrayHover;
+        }
+        svg:active{
+            background: $colorGrayActive;
+        }
+    }
+    span:nth-child(1){
+        width: 230px;
+        height: 30px;
+        font-size: 16px;
+        text-align: center;
+        padding: 15px 7px 10px 7px;
+        margin: auto;
+        cursor:default;
+        border-bottom:1px solid $colorGrayLight;
+
+    }
+    span:nth-child(1):hover{
+        background: none;
+
+    }
+
+    span:hover{
+        background: $colorGrayHover;
+    }
+    span:active{
+        background: $colorGrayActive;
+    }
+    .none{
+        display: none;
+    }
+    .block{
+        display: block;
+    }
+}

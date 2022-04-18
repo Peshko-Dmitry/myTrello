@@ -1,5 +1,5 @@
 import './index.scss'
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import OpenCard from '../openCard/OpenCard'
 import DeleteCard from '../deleteCard/DeleteCard'
 
@@ -14,8 +14,7 @@ const CardEditor = ({element, editActive, setList, list, item}) => {
             setText(event.target.value)
     }
     const editCard = () => {
-        let newArr = item.tasks
-        .map(i => {
+        item.tasks.map(i => {
             if(i.task === element.task){
                 // i.task = event.target.value
                 i.task = text
@@ -25,7 +24,7 @@ const CardEditor = ({element, editActive, setList, list, item}) => {
                 return i
             }
         })
-        editActive(element)
+        editActive(item, element)
         setOpenCard(false)
 
 
@@ -38,7 +37,7 @@ const CardEditor = ({element, editActive, setList, list, item}) => {
     return(
         <>
         <div className={element.edit ? "card block" : "card none"}>
-        <svg onClick={()=>editActive(element)}
+        <svg onClick={()=>editActive(item, element)}
                     className="closed" 
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 320 512">

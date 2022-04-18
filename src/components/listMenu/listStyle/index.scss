@@ -1,0 +1,95 @@
+$color: rgb(84, 82, 94, .8);
+$colorWhite: #ffffff;
+$colorBlue: #0079bf;
+$colorText: #172b4d;
+$colorBlueHover:rgb(0, 121, 191, 0.8);
+$colorBlueActiv:rgb(0, 121, 191, 0.7);
+$colorGrayLight: rgb(235, 236, 240);
+$colorGrayHover: rgba(84, 82, 94, 0.15);
+$colorGrayActive: rgba(84, 82, 94, 0.25);
+$colorBtn: rgba(255, 255, 255, 0.2);
+$colorBtnHover:rgba(255, 255, 255, 0.25); 
+$colorBtnActive:rgba(255, 255, 255, 0.35); 
+
+
+.list-style{
+    position: relative;
+    top: 0;
+    left: 270px;
+    background: $colorWhite;
+    min-height: 100px;
+    width: 400px;
+    z-index: 7;
+    border: solid 1px $colorGrayLight;
+    border-radius: 3px;
+    p{
+        height: 30px;
+        width: 260px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top:10px;
+        background: none;
+        border-bottom: 1px solid $colorGrayLight;
+    }
+    .closed{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: none;
+        height: 30px;
+        width: 30px;
+        padding: 3px;
+        border-radius: 3px;
+        fill: $color;
+    }
+    .closed:hover{
+        background: $colorGrayHover;
+    }
+    .closed:active{
+        background: $colorGrayActive;
+    }
+    .list-style-colors{
+        min-height: 100px;
+        width: 350px;
+        margin: 10px auto;
+        background: none;
+        
+        i{
+            position: relative;
+            display: inline-block;
+            height: 35px;
+            width: 70px;
+            background: #0079bf;
+            border-radius: 3px;
+            margin: 7px;
+            svg{
+                position: absolute;
+                display: block;
+                top: 0px;
+                left: 20px;
+                fill: $colorWhite;
+                transition: all .15s ease;
+                transform: scale(0);
+                background: none;
+                border-radius: 3px;
+
+            }
+            .active{
+                top: 0px;
+                left: 0px;
+                padding: 5px 24px;
+                display:block;
+                transform: scale(1);
+                background: $colorGrayActive;
+
+            }
+        }
+        
+    }
+}
+.none{
+    display: none;
+}
+.block{
+    display: block;
+}

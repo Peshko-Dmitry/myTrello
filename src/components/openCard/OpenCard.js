@@ -6,21 +6,24 @@ const OpenCard = ({item, list, text, setList, element, setOpenCard, openCard, ne
     const colors =['#61bd4f', '#f2d600', '#ff9f1a','#eb5a46', '#c377e0', '#0079bf', '#ff78cb', '#344563']
     const [labelsCard, setLabelsCard] = useState([])
     const [descriptionCard, setDescriptionCard] = useState('')
-    // const [activColor, setActiveColor] = useState(false)
 
-    const addLabelsAndDescriptionCard = () => {
+    const addLabelsAndDescriptionCard = (item, element) => {
         let newArr = list.map(i => {
+            if(i.title === item.title){
+                i.tasks.map(el => {
+                    if(el.task === element.task){
+                        el.labels = labelsCard
+                        el.description = descriptionCard
+                        return el
+                    } else {
+                        return el
+                    }
+                })
+                return i
+            } else {
+                return i
+            }
            
-            i.tasks.map(el => {
-                if(el.task === element.task) {
-                    el.labels = labelsCard
-                    el.description = descriptionCard
-                    return el
-                } else {
-                    return el
-                }
-            })
-            return i
         })
 
         setList(newArr)
@@ -125,7 +128,7 @@ const OpenCard = ({item, list, text, setList, element, setOpenCard, openCard, ne
                  <textarea onChange={(event)=> description(event)} name="" id="" cols="30" rows="10" placeholder="Введите описание">
 
                  </textarea>
-                <button onClick={addLabelsAndDescriptionCard} className="save-card btn">Сохранить карточку</button>
+                <button onClick={()=>addLabelsAndDescriptionCard(item, element)} className="save-card btn">Сохранить карточку</button>
 
             </div>
             {/* <svg  

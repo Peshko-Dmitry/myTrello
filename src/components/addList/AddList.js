@@ -1,9 +1,11 @@
 import {React, useEffect, useState } from "react"
 import AddCards from '../addCards/AddCards'
+import ListMenu from '../listMenu/ListMenu'
 
 
 const AddList = ()=> {
     const [addListName, setAddListName] = useState(false)
+    // const [listMenu, setListMenu] = useState(false)
     const [tasksList, setTasksList] = useState('')
     const [task, setTask] = useState('')
     const [list, setList] = useState(
@@ -28,16 +30,27 @@ const AddList = ()=> {
     }
 
     const addListLocal =(event) =>{
-        if(tasksList.trim() !== ''){
-            const newTaskList = {
-                id: tasksList,
-                title: tasksList,
-                tasks: [],            
-                active: false,
-                color: null, 
-            }
-            setList([...list, newTaskList])
-            setTasksList('')
+
+        if(tasksList.trim() !== '' ){
+            list.map(i => {
+                    if(i.title === tasksList.trim()){
+                        alert('Такое название списка уже существует! пожалуйста введите другое название.')
+                        setTasksList('')
+                        setList([...list])
+                    } else {
+                        const newTaskList = {
+                            id: tasksList,
+                            title: tasksList,
+                            tasks: [],            
+                            active: false,
+                            menu: false,
+                            color: null, 
+                        }
+                        setList([...list, newTaskList])
+                        setTasksList('')
+                    }
+                })
+
         } else {
             alert('Please enter the name of the task list')
         }
@@ -92,9 +105,20 @@ const AddList = ()=> {
         })
         setList(newArr)
     }
+    const openListMenu = (item) => {
+        let newArr = list.map(i => {
+            if(i.id === item.id){
+                i.menu = !i.menu
+                return i
+            } else {
+                return i
+            }
+        })
+        setList(newArr)
 
+    }
+  
     useEffect(()=>{
-        console.log('создан новый список задач')
         localStorage.setItem('list', JSON.stringify(list))
     },[list, task])
   
@@ -103,21 +127,29 @@ const AddList = ()=> {
         {
             list.map((item, index)=>{
                 return(
-                <div className="list-add" key={index}>
-                    <div className="list-add-nav">
-                        <input onChange={(event) => editListName(event, item)} type="text" placeholder="Ввести заголовок списка" maxLength='512' autoComplete='off' defaultValue={item.title}/>
-                            <svg className="nav-action"
+                <div className="list-add" key={index} >
+                    <div className="list-add-nav" style={{background: item.color}}>
+                        <input onChange={(event) => editListName(event, item)} style={{background: 'white'}}
+                            type="text" 
+                            placeholder="Ввести заголовок списка"
+                            maxLength='512' 
+                            autoComplete='off'
+                            value={item.title}/>
+                            <svg 
+                            onClick={()=> openListMenu(item)}
+                            className="nav-action"
                             xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 448 512">
                             <path d="M120 256C120 286.9 94.93 312 64 312C33.07 312 8 286.9 8 256C8 225.1 33.07 200 64 200C94.93 200 120 225.1 120 256zM280 256C280 286.9 254.9 312 224 312C193.1 312 168 286.9 168 256C168 225.1 193.1 200 224 200C254.9 200 280 225.1 280 256zM328 256C328 225.1 353.1 200 384 200C414.9 200 440 225.1 440 256C440 286.9 414.9 312 384 312C353.1 312 328 286.9 328 256z"/>
                             </svg>
+                            <ListMenu openListMenu={openListMenu} item={item} list={list} setList={setList}/>
                     </div>
-                    <div className="list-add-cards">
+                    <div className="list-add-cards" style={{background: item.color}}>
                         <AddCards item={item} setList={setList} list={list}/>
-                            {/* not activ */}
+                            
                         <textarea className={item.active ? 'list-add-cards-title block' : 'list-add-cards-title none' } onChange={taskName} cols="30" rows="10"  placeholder={'Ввести заголовок для этой карточки' }></textarea>
                         <button onClick={() => activeStyle(item)}   className={item.active ? "button-active none" :"button-active block"}>+ Добавить карточку</button>
-                            {/* active */}
+                            
                             <button className={item.active ? 'button-not-active block' : 'button-not-active none' } onClick={(event) => addtaskClick(item, event)}>Добавить карточку</button>
                             <svg className={item.active ? 'closed-cards block' : 'closed-cards none' }
                                 onClick={() => activeStyle(item)}
