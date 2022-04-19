@@ -22,249 +22,316 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:url('./img/img_4.jpg');
+  // background-image:url('./img/img_4.jpg');
+
+  // z-index: -1;
+
+}
+.wrapper{
+  position: fixed;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  // z-index: -1;
-
-}
-.App{
-  // z-index: 5;
-}
-.header{
-  position: fixed;
-  box-sizing: border-box;
-  height: 43px;
-  width: 100%;
-  background: $color;
-  color: $colorWhite;
-  // z-index: 2;
-  text-align: center;
-  p{
-    background: none;
-    font-size: 28px;
-    padding: 3px 0;
-  }
-
-}
-.nav{
-  position: relative;
-  top: 50px;
-  // background: $colorBtnActive;
-  height: 40px;
-  // z-index: 2;
-
-}
-.list{
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  top: 68px;
+  z-index: -10;
   height: 100%;
   width: 100%;
-  // z-index: 3;
-
-  .list-add{
+}
+  .header{
+    position: fixed;
+    box-sizing: border-box;
+    height: 43px;
+    width: 100%;
+    background: $color;
+    color: $colorWhite;
+    // z-index: 2;
+    text-align: center;
+    p{
+      background: none;
+      font-size: 28px;
+      padding: 3px 0;
+    }
+  
+  }
+  
+  .list{
     position: relative;
     display: flex;
-    // flex-direction: column;
-    flex-wrap: wrap;
-    // box-sizing: border-box;
-    margin-left: 20px;
-    min-width: 272px;
-    // // height: 50px;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    top: 68px;
     height: 100%;
-    background: $colorGrayLight;
-    border-radius: 3px;
-    &-nav{
-      position: relative;
-      top: 0;
-      width: 272px;
-      height: 44px;
-      background:$colorGrayLight;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      input{
-            // position: absolute;
-            top: 0;
-            box-sizing: border-box;
-            min-width: 220px;
-            height: 36px;
-            font-size: 14px;
-            padding: 2px 12px;
-            background: none;
-            border: 2px solid transparent;
-            margin: 3px;
-            border-radius: 3px;
-          }
-          input:focus{
-                outline: none;
-                border: 2px solid $colorBlue;
-                background: $colorWhite;
-          
-              }
-          .nav-action{
-              position: absolute;
-              margin: 4px;
-              right: 2px;
-              top: 0px;
-              background: none;
-              padding: 6px;
-              height: 24px;
-              width: 24px;
-              fill: $color;
-              cursor: pointer;
-              border-radius: 3px;
-          }
-          .nav-action:hover{
-            background: $colorGrayHover;
-      
-          }
-
-    }
-    &-cards{
-      position: absolute;
-      top: 44px;
-      width: 272px;
-      min-height: 40px;
-      background: $colorGrayLight;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-
-      .cards-details{
-        background: $colorGrayLight;
-
-
-          .card-title{
-            position: relative;
-            // top: 0;
-            display: inline-block;
-            display: flex;
-            flex-wrap: wrap;
-            
-            background: #fff;
-            color: $colorText;
-            border-radius: 3px;
-            min-height: 20px;
-            width: 239px;
-            margin: 5px 4px;
-            padding: 3px 20px 2px 5px;
-            box-shadow: 0 1px 0 #091e4240;
-            .card-labels{
-              position: relative;
-              display: inline-block;
-              left: 0;
-              margin: 2px 3px;
-              background: #0079bf;
-              height: 3px;
-              min-width: 30px;
-              border-radius: 3px;
-            }
-            .card-name{
-              position: relative;
-              top: 0px;
-              margin: 5px;
-              width: 220px;
-            background: none;
-
-            }
-            .edit{
-              position: absolute;
-              right: 10px;
-              bottom: 10px;
-              background: none;
-              opacity: 0;
-              cursor: pointer;
-            }
-
+    width: 100%;
+    // z-index: 3;
   
-          }
-          .card-title:hover{
-            background: $colorGrayHover;
-
-            .edit{
-              opacity: .5;
+    .list-add{
+      position: relative;
+      display: flex;
+      // flex-direction: column;
+      flex-wrap: wrap;
+      // box-sizing: border-box;
+      margin-left: 20px;
+      min-width: 272px;
+      // // height: 50px;
+      height: 100%;
+      background: $colorGrayLight;
+      border-radius: 3px;
+      &-nav{
+        position: relative;
+        top: 0;
+        width: 272px;
+        height: 44px;
+        background:$colorGrayLight;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        input{
+              // position: absolute;
+              top: 0;
+              box-sizing: border-box;
+              min-width: 220px;
+              height: 36px;
+              font-size: 14px;
+              padding: 2px 12px;
+              background: none;
+              border: 2px solid transparent;
+              margin: 3px;
+              border-radius: 3px;
             }
-            .edit:active{
-              opacity: .3;
-            }
-
+            input:focus{
+                  outline: none;
+                  border: 2px solid $colorBlue;
+                  background: $colorWhite;
             
-          }
+                }
+            .nav-action{
+                position: absolute;
+                margin: 4px;
+                right: 2px;
+                top: 0px;
+                background: none;
+                padding: 6px;
+                height: 24px;
+                width: 24px;
+                fill: $color;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+            .nav-action:hover{
+              background: $colorGrayHover;
         
-        
+            }
+  
       }
-
-      &-title{
-        
-        right: 6px;
-        bottom: 50px;
-        width: 244px;
-        height: 66px;
-        margin: 5px 4px;
-        padding: 7px 10px;
-        background: $colorWhite;
-        border: none;
-        border-radius: 3px;
-        outline: none;
-        resize: none;
-        box-shadow: 0 1px 0 #091e4240;
-
-      }
-      &-title:focus{
-        outline: none;
-      }
-      .button-active{
-        
-        bottom: 0px;
-        left: 0px;
-        color: $colorText;
+      &-cards{
+        position: absolute;
+        top: 44px;
+        width: 272px;
+        min-height: 40px;
         background: $colorGrayLight;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+  
+        .cards-details{
+          background: $colorGrayLight;
+  
+  
+            .card-title{
+              position: relative;
+              // top: 0;
+              display: inline-block;
+              display: flex;
+              flex-wrap: wrap;
+              
+              background: #fff;
+              color: $colorText;
+              border-radius: 3px;
+              min-height: 20px;
+              width: 239px;
+              margin: 5px 4px;
+              padding: 3px 20px 2px 5px;
+              box-shadow: 0 1px 0 #091e4240;
+              .card-labels{
+                position: relative;
+                display: inline-block;
+                left: 0;
+                margin: 2px 3px;
+                background: #0079bf;
+                height: 3px;
+                min-width: 30px;
+                border-radius: 3px;
+              }
+              .card-name{
+                position: relative;
+                top: 0px;
+                margin: 5px;
+                width: 220px;
+              background: none;
+  
+              }
+              .edit{
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                background: none;
+                opacity: 0;
+                cursor: pointer;
+              }
+  
+    
+            }
+            .card-title:hover{
+              background: $colorGrayHover;
+  
+              .edit{
+                opacity: .5;
+              }
+              .edit:active{
+                opacity: .3;
+              }
+  
+              
+            }
+          
+          
+        }
+  
+        &-title{
+          
+          right: 6px;
+          bottom: 50px;
+          width: 244px;
+          height: 66px;
+          margin: 5px 4px;
+          padding: 7px 10px;
+          background: $colorWhite;
+          border: none;
+          border-radius: 3px;
+          outline: none;
+          resize: none;
+          box-shadow: 0 1px 0 #091e4240;
+  
+        }
+        &-title:focus{
+          outline: none;
+        }
+        .button-active{
+          
+          bottom: 0px;
+          left: 0px;
+          color: $colorText;
+          background: $colorGrayLight;
+          font-size: 14px;
+          padding: 2px 0px;
+          border: none;
+          border-radius: 3px;
+          margin: 5px 4px;
+          min-height: 32px;
+          min-width: 264px;
+          cursor: pointer;
+          // text-align:left;
+        }
+        .button-active:hover{
+          background: $colorGrayHover;
+        }
+        .button-active:active{
+          background: $colorGrayActive;
+        }
+        //not-active
+        .button-not-active{
+          
+          color: $colorWhite;
+          background: $colorBlue;
+          font-size: 14px;
+          padding: 4px 12px;
+          border: none;
+          border-radius: 3px;
+          margin: 5px 4px;
+          min-height: 32px;
+          cursor: pointer;
+        }
+        .button-not-active:hover{
+          background: $colorBlueHover;
+        }
+        .button-not-active:active{
+          background: $colorBlueActiv;
+        }
+        .closed-cards{
+          position: absolute;
+          margin: 3px 4px;
+          opacity: .8;
+          bottom: 0px;
+          background: none;
+          padding: 0px;
+          height: 36px;
+          width: 36px;
+          fill: $color;
+          cursor: pointer;
+          right: 0;
+        }
+        .closed-cards:hover{
+          opacity: .6;
+        }
+        .closed-cards:active{
+          opacity: .4;
+        }
+        .none {
+          display: none;
+        }
+        .block{
+          display: block;
+        }
+      }
+      }
+  
+    }
+    
+    .list-name{
+      position: relative;
+      display: none;
+      margin-left: 20px;
+      width: 272px;
+      height: 80px;
+      background:#ebecf0;
+      border-radius: 3px;
+      
+      input{
+        width: 236px;
+        height: 16px;
         font-size: 14px;
-        padding: 2px 0px;
-        border: none;
+        padding: 8px 12px;
+        background: white;
+        border: 2px solid $colorBlue;
+        margin: 4px;
         border-radius: 3px;
-        margin: 5px 4px;
-        min-height: 32px;
-        min-width: 264px;
-        cursor: pointer;
-        // text-align:left;
+      
       }
-      .button-active:hover{
-        background: $colorGrayHover;
-      }
-      .button-active:active{
-        background: $colorGrayActive;
-      }
-      //not-active
-      .button-not-active{
-        
+      textarea:focus, input:focus{
+        outline: none;
+    }
+  
+      button{
         color: $colorWhite;
         background: $colorBlue;
         font-size: 14px;
         padding: 4px 12px;
         border: none;
         border-radius: 3px;
-        margin: 5px 4px;
+        margin: 0 4px;
         min-height: 32px;
         cursor: pointer;
       }
-      .button-not-active:hover{
+      button:hover{
         background: $colorBlueHover;
       }
-      .button-not-active:active{
+      button:active{
         background: $colorBlueActiv;
       }
-      .closed-cards{
+      .close{
         position: absolute;
-        margin: 3px 4px;
-        opacity: .8;
+        right: 5px;
         bottom: 0px;
         background: none;
         padding: 0px;
@@ -272,118 +339,50 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
         width: 36px;
         fill: $color;
         cursor: pointer;
-        right: 0;
       }
-      .closed-cards:hover{
+      .close:hover{
+        opacity: .8;
+      }
+      .close:active{
         opacity: .6;
       }
-      .closed-cards:active{
-        opacity: .4;
-      }
-      .none {
-        display: none;
-      }
-      .block{
-        display: block;
-      }
     }
-    }
-
-  }
-  
-  .list-name{
-    position: relative;
-    display: none;
-    margin-left: 20px;
-    width: 272px;
-    height: 80px;
-    background:#ebecf0;
-    border-radius: 3px;
-    
-    input{
-      width: 236px;
-      height: 16px;
-      font-size: 14px;
-      padding: 8px 12px;
-      background: white;
-      border: 2px solid $colorBlue;
-      margin: 4px;
-      border-radius: 3px;
-    
-    }
-    textarea:focus, input:focus{
-      outline: none;
-  }
-
-    button{
-      color: $colorWhite;
-      background: $colorBlue;
-      font-size: 14px;
-      padding: 4px 12px;
-      border: none;
-      border-radius: 3px;
-      margin: 0 4px;
-      min-height: 32px;
-      cursor: pointer;
-    }
-    button:hover{
-      background: $colorBlueHover;
-    }
-    button:active{
-      background: $colorBlueActiv;
-    }
-    .close{
-      position: absolute;
-      right: 5px;
-      bottom: 0px;
-      background: none;
-      padding: 0px;
-      height: 36px;
-      width: 36px;
-      fill: $color;
-      cursor: pointer;
-    }
-    .close:hover{
-      opacity: .8;
-    }
-    .close:active{
-      opacity: .6;
-    }
-  }
-  .list-button{
-    position: relative;
-    width: 260px;
-
-    .btn{
+    .list-button{
+      position: relative;
       width: 260px;
-      
+  
+      .btn{
+        width: 260px;
+        
+      }
     }
+  
+  .btn{
+    position: absolute;
+    color: $colorWhite;
+    background: $colorBtn;
+    font-size: 20px;
+    padding: 7px 30px;
+    border: none;
+    border-radius: 5px;
+    left: 20px;
+  }
+  .btn:hover{
+    background: $colorBtnHover;
+  
+  }
+  .btn:active{
+    background: $colorBtnActive;
+  
+  }
+  .none {
+    display: none;
+  }
+  .block{
+    display: block;
   }
 
-.btn{
-  position: absolute;
-  color: $colorWhite;
-  background: $colorBtn;
-  font-size: 20px;
-  padding: 7px 30px;
-  border: none;
-  border-radius: 5px;
-  left: 20px;
-}
-.btn:hover{
-  background: $colorBtnHover;
 
-}
-.btn:active{
-  background: $colorBtnActive;
-
-}
-.none {
-  display: none;
-}
-.block{
-  display: block;
-}
 
 
 

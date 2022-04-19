@@ -1,0 +1,103 @@
+$color: rgb(84, 82, 94, .8);
+$colorWhite: #ffffff;
+$colorBlue: #0079bf;
+$colorText: #172b4d;
+$colorBlueHover:rgb(0, 121, 191, 0.8);
+$colorBlueActiv:rgb(0, 121, 191, 0.7);
+$colorGrayLight: rgb(235, 236, 240);
+$colorGrayHover: rgba(84, 82, 94, 0.15);
+$colorGrayActive: rgba(84, 82, 94, 0.25);
+$colorBtn: rgba(255, 255, 255, 0.2);
+$colorBtnHover:rgba(255, 255, 255, 0.25); 
+$colorBtnActive:rgba(255, 255, 255, 0.35); 
+
+
+
+
+.background{
+    position: relative;
+    top: 50px;
+    height: 40px;
+    .background-open{
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 8;
+    }
+    .background-window{
+        position: fixed;
+        display: none;
+        top: 30px;
+        left: calc(50% - 285px);
+        min-height: 780px;
+        width: 570px;
+        background: $colorGrayLight;
+        z-index: 8;
+        margin: 0;
+        padding: 0;
+        border-radius: 3px;
+        // transition: all .2s ease;
+        .closed{
+            position: absolute;
+            top: 18px;
+            left: 502px;
+            height: 25px;
+            width: 25px;
+            padding: 10px;
+            border-radius: 50%;
+            background: none;
+            fill:$color;
+    
+    
+        }
+        .closed:hover{
+            background: $colorGrayHover;
+    
+        }
+        .closed:active{
+            background: $colorGrayActive;
+    
+        }
+        .title{
+            position: absolute;
+            top: 18px;
+            left: 40px;
+            font-size: 20px;
+            background: none;
+            padding: 5px 155px 15px 15px;
+            border-bottom: 1px solid $color;
+        }
+        .background-list{
+            position: absolute;
+            top: 80px;
+            left: 30px;
+            background: none;
+            .image{
+                height: 40%;
+                width: 40%;
+                margin: 10px;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            .active{
+                border: 2px solid $colorBlue;
+                height: 50%;
+                width: 50%;
+                margin: 2px;
+
+            }
+        }
+    
+    }
+    .none{
+        display: none;
+    }
+    .block{
+      display: block;
+  }
+  }
+
