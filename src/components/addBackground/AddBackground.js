@@ -15,7 +15,7 @@ const addBackground = (img)=> {
     setActiveBackground(img)
     setBackground([img])
 }
-// console.log(Img)
+
 useEffect(()=>{
   localStorage.setItem('background', JSON.stringify(background))
 },[background, openBackground,activeBackground ])

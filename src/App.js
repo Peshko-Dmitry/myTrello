@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import List from './components/list/List'
 import AddBackground from "./components/addBackground/AddBackground";
 
@@ -6,7 +6,7 @@ function App() {
   const [activeBackground, setActiveBackground] = useState()
   const [background, setBackground] = useState(
 
-    JSON.parse(localStorage.getItem('background')) || []
+    JSON.parse(localStorage.getItem('background')) || ["/static/media/img_2.1a5a7fab01720c1902d6.jpg"]
     
 )
 
