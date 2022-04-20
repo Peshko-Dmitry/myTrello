@@ -2,7 +2,7 @@ import './index.scss'
 import React from 'react'
 
 const DeleteList = ({list, setList, item, deleteList, setDeleteList}) => {
-    console.log(item)
+
     const deleteListFn = () => {
 
         setList(list.filter(i => i.title !== item.title))

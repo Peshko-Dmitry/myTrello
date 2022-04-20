@@ -25,13 +25,11 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
         background: none;
         display: block;
         top: 0;
-        width: 290px;
+        width: 280px;
         height: 30px;
-        margin: 5px;
+        margin: 5px 0;
         cursor: pointer;
-        padding: 5px;
-
-
+        padding: 5px 15px;
 
         svg{
             position: absolute;
@@ -43,6 +41,7 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
             padding: 3px;
             border-radius: 3px;
             fill: $color;
+            cursor: pointer;
             
 
         }

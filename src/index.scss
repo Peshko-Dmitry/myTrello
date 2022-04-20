@@ -22,14 +22,11 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background-image:url('./img/img_4.jpg');
 
-  // z-index: -1;
 
 }
 .wrapper{
   position: fixed;
-  // background-image: url('./img/img_1.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -47,7 +44,6 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
     width: 100%;
     background: $color;
     color: $colorWhite;
-    // z-index: 2;
     text-align: center;
     p{
       background: none;
@@ -367,6 +363,7 @@ $colorBtnActive:rgba(255, 255, 255, 0.35);
     border: none;
     border-radius: 5px;
     left: 20px;
+    cursor: pointer;
   }
   .btn:hover{
     background: $colorBtnHover;
