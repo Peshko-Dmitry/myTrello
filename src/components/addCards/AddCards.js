@@ -25,11 +25,13 @@ const AddCards = ({item, setList, list}) => {
         setList(newArr)
         
     }
+    
     return(
         <div className='cards-details' style={{background: item.color}}>
                             
                             {
                                 item.tasks.map((element, index) => {
+                                    
                                     return(
                                         <div className='card-title' key={`${element}--${index}`}>
                                             {
@@ -41,7 +43,7 @@ const AddCards = ({item, setList, list}) => {
 
                                             }
                                                                                         
-                                            <span className="card-name">{element.task}</span>
+                                            <span title={element.description} className="card-name">{element.task}</span>
                                             
                                         <svg onClick={()=> editActive( item, element)}
                                             className="edit"
