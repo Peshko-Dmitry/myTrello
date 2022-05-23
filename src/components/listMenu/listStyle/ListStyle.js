@@ -2,7 +2,7 @@ import './index.scss'
 import React, {useState} from 'react'
 
 const ListStyle = ({setStyleColor, styleColor, openStyleColor, setList, list, item}) => {
-    const colors = ['#ADB5D3', '#E1DBE5', '#F9F3F5','#BDC9C7', '#BDC9C7', '#C1D8E7', '#E5D8F2', '#F3F0FB','#bfd2de', '#d7cbd4', '#bb7db2', '#9bcfe0']
+    const colors = ['#ADB5D3', '#E1DBE5', '#F9F3F5', '#BDC9C7', '#C1D8E7', '#E5D8F2', '#F3F0FB','#bfd2de', '#d7cbd4', '#bb7db2', '#9bcfe0']
     const [listColor,setListColor] = useState('')
     
 
@@ -19,7 +19,7 @@ const ListStyle = ({setStyleColor, styleColor, openStyleColor, setList, list, it
             }
         })
         setList(newArr)
-        console.log(newArr)
+        
     }
 
     return(
